@@ -2,32 +2,41 @@ package com.fivepointers.selenium;
 
 import java.time.LocalDateTime;
 
+import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Service;
+
+import com.fivepointers.selenium.store.WorkbookHandler;
 
 @Service
 public class DriveSelenium {
-	// September 16, 2024 07:38 IST
 
-	public void run() {
-//		WebDriver driver = new ChromeDriver();
-//
-//		driver.get("https://demo.opencart.com");
-//
-//		String title = driver.getTitle();
-//
-//		if ("Your Store".equals(title)) {
-//			System.out.println("true");
-//		} else {
-//			System.out.println("false");
-//		}
-//		driver.findElement(By.xpath("//input[@name='search' or @placeholder='Search']")).sendKeys("T-Shirt");
-//		driver.close();
+	public void sheetRun() {
+		WorkbookHandler handler = new WorkbookHandler();
+	    Sheet sheet = handler.getOrCreateSheet();
+		System.out.println(sheet.getRow(0).getCell(0));
+		System.out.println(sheet.getRow(1).getCell(0));
 		
-		News news = new ExpressNews("news-data");
-		news.run();
 	}
 
+	public void textRun() {
+		News news = new ExpressNews("news-data");
+		news.run();
+		news = new Jagran("news-data");
+		news.run();
+		news = new Navbharat("news-data");
+		news.run();
+	}
 	
+	public void run() {
+//	    handler.addDate(sheet, 1, 0, LocalDateTime.now()); // Add data at row 1
+//	    handler.getCell(handler.getRow(sheet, 1), 1).setCellValue("Sample News Title");
+//	    handler.getCell(handler.getRow(sheet, 1), 2).setCellValue("Sample description for the news.");
+//	    handler.getCell(handler.getRow(sheet, 1), 3).setCellValue("Author Name");
+//	    handler.save();
+		textRun();
+
+	}
+
 	static class Article {
 		String title;
 		LocalDateTime date;

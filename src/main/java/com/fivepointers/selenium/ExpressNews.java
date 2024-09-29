@@ -19,9 +19,9 @@ public class ExpressNews extends News {
 	private List<NewsSection> sections = List.of(
 			new NewsSection("politics", "https://indianexpress.com/section/political-pulse/"),
 			new NewsSection("sports", "https://indianexpress.com/section/sports/"));
-	private static final String DATE_PATTERN = "MMMM dd, yyyy H:m z";
+	// September 16, 2024 07:38 IST
 	private static final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
-			.appendPattern(DATE_PATTERN).toFormatter(Locale.ENGLISH);
+			.appendPattern("MMMM dd, yyyy H:m z").toFormatter(Locale.ENGLISH);
 
 	public ExpressNews(String root) {
 		super(root, "express");
@@ -38,7 +38,9 @@ public class ExpressNews extends News {
 			List<Article> articles = elements.stream().map(element -> getDetails(element))
 					.filter(article -> isNewArticle(article.getDate())
 							&& isUnreadArticle(article.getUrl(), section.getTopic()))
-					.limit(1).peek(article -> ExpressNews.getFullContent(article)).collect(Collectors.toList());
+					.peek(article -> ExpressNews.getFullContent(article))
+					.filter(article -> article.getContent() != null)
+					.collect(Collectors.toList());
 			writeArticles(section.getTopic(), articles);
 		});
 		driver.quit();
@@ -56,25 +58,18 @@ public class ExpressNews extends News {
 	private static void getFullContent(Article article) {
 		WebDriver driver = new ChromeDriver();
 		driver.get(article.getUrl());
-		String fullContent = driver.findElement(By.id("pcl-full-content")).getText().replaceAll("ADVERTISEMENT", "")
-				.replace("Click here to join The Indian Express on WhatsApp and get latest news and updates", "");
-		article.setContent(fullContent.trim());
+		try {
+			String fullContent = driver.findElement(By.id("pcl-full-content")).getText().replaceAll("ADVERTISEMENT", "")
+					.replace("Click here to join The Indian Express on WhatsApp and get latest news and updates", "");
+			article.setContent(fullContent.trim());			
+		} catch(org.openqa.selenium.NoSuchElementException ex) {
+			article.setContent(null);	
+		}
 		driver.close();
 		try {
 			Thread.sleep(2000l);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
-	}
-
-	private static void print(List<Article> articles) {
-		for (Article article : articles) {
-			System.out.println("Title: " + article.getTitle());
-			System.out.println("Date: " + article.getDate());
-			System.out.println("Synopsys: " + article.getSynopsys());
-			System.out.println("Url: " + article.getUrl());
-			System.out.println("Content: " + article.getContent());
-			System.out.println("====================================");
 		}
 	}
 }

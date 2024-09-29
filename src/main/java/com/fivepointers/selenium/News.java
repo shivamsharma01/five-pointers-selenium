@@ -92,4 +92,15 @@ public abstract class News {
 			e.printStackTrace();
 		}
 	}
+
+	void print(List<Article> articles) {
+		for (Article article : articles) {
+			System.out.println("Title: " + article.getTitle());
+			System.out.println("Date: " + article.getDate());
+			System.out.println("Synopsys: " + article.getSynopsys());
+			System.out.println("Url: " + article.getUrl());
+			System.out.println("Content: " + article.getContent());
+			System.out.println("====================================");
+		}
+	}
 }
