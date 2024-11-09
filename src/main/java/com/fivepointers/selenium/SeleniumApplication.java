@@ -9,8 +9,8 @@ public class SeleniumApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SeleniumApplication.class, args);
 		
-		DriveSelenium drive = new DriveSelenium();
-		drive.run();
+//		DriveSelenium drive = new DriveSelenium();
+//		drive.run();
 	}
 
 }

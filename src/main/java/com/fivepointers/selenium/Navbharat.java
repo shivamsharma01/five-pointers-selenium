@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.fivepointers.selenium.DriveSelenium.Article;
 
 public class Navbharat extends News {
-	// SUN, 29 SEP 2024 01:34 PM (IST)
+	// 30 Sept 2024, 6:19 pm
 	private static final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
 			.appendPattern("dd MMM yyyy, h:mm a").toFormatter(Locale.ENGLISH);
 

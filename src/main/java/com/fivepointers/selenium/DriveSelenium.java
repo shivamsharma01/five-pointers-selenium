@@ -2,28 +2,19 @@ package com.fivepointers.selenium;
 
 import java.time.LocalDateTime;
 
-import org.apache.poi.ss.usermodel.Sheet;
-import org.springframework.stereotype.Service;
-
-import com.fivepointers.selenium.store.WorkbookHandler;
-
-@Service
+//@Service
 public class DriveSelenium {
 
-	public void sheetRun() {
-		WorkbookHandler handler = new WorkbookHandler();
-	    Sheet sheet = handler.getOrCreateSheet();
-		System.out.println(sheet.getRow(0).getCell(0));
-		System.out.println(sheet.getRow(1).getCell(0));
-		
-	}
 
 	public void textRun() {
-		News news = new ExpressNews("news-data");
-		news.run();
-		news = new Jagran("news-data");
-		news.run();
-		news = new Navbharat("news-data");
+		News news;
+//		news = new ExpressNews("news-data");
+//		news.run();
+//		news = new Jagran("news-data");
+//		news.run();
+//		news = new Navbharat("news-data");
+//		news.run();
+		news = new Ndtv("");
 		news.run();
 	}
 	
@@ -83,5 +74,12 @@ public class DriveSelenium {
 		public void setContent(String content) {
 			this.content = content;
 		}
+
+		@Override
+		public String toString() {
+			return "Article [title=" + title + ", date=" + date + ", synopsys=" + synopsys + ", url=" + url
+					+ ", content=" + content + "]";
+		}
+		
 	}
 }

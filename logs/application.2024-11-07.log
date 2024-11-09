@@ -1,0 +1,320 @@
+2024-11-07 19:36:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-07 19:36:28 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Starting FivePointersWebsiteApplication using Java 17.0.9 with PID 4624 (C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main started by priso in C:\Users\priso\Desktop\mixed folder\fivepointers)
+2024-11-07 19:36:28 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - The following 1 profile is active: "dev"
+2024-11-07 19:36:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-07 19:36:28 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-07 19:36:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 19:36:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 12 JPA repository interfaces.
+2024-11-07 19:36:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 19:36:30 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 19:36:30 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 19:36:30 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-07 19:36:30 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-07 19:36:30 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2041 ms
+2024-11-07 19:36:30 [restartedMain] INFO  com.fivepointers.service.JwtService - init JWT expiry renew time set as 24 hours or 86400000 milliseconds
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6bae3df1
+ ...
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6bae3df1
+ ...
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/priso/Desktop/mixed%20folder/fivepointers/bin/main/db/migration
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\db\migration (db/migration)
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__initial.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__insert_update_table.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__update_news_table_add_published_date.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__update_news_table_add_new_status_.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V5__update_news_table_add_new_region.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V6__update_news_table_modify_column_category.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V7__update_news_table_modify_column_category.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V3__update_news_table_add_published_date.sql
+2024-11-07 19:36:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-07 19:36:30 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28719b36
+2024-11-07 19:36:30 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V1__initial.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V4__update_news_table_add_new_status_.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V5__update_news_table_add_new_region.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V7__update_news_table_modify_column_category.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V6__update_news_table_modify_column_category.sql
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V2__insert_update_table.sql
+2024-11-07 19:36:30 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3307/fp (MySQL 8.4)
+2024-11-07 19:36:30 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2024-11-07 19:36:30 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: false
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.database.mysql.MySQLConnection - Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2024-11-07 19:36:30 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2024-11-07 19:36:30 [restartedMain] DEBUG o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: `fp`
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 19:36:31 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 19:36:31 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `fp`: 8
+2024-11-07 19:36:31 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema `fp` is up to date. No migration necessary.
+2024-11-07 19:36:31 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Memory usage: 61 of 96M
+2024-11-07 19:36:31 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 19:36:31 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-11-07 19:36:31 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 19:36:31 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 19:36:31 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2024-11-07 19:36:31 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-07 19:36:33 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 19:36:33 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 19:36:33 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-07 19:36:34 [restartedMain] INFO  c.f.service.NewsLockService - init Lock retention time set as 20 mins or 1200000 milliseconds
+2024-11-07 19:36:34 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-07 19:36:34 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-07 19:36:36 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-11-07 19:36:36 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 19:36:36 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 19:36:37 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-11-07 19:36:37 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Started FivePointersWebsiteApplication in 9.5 seconds (process running for 10.366)
+2024-11-07 19:36:37 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-07 19:36:37 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-07 19:36:37 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-11-07 20:34:58 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m57s420ms302µs).
+2024-11-07 22:40:08 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m38s433ms733µs100ns).
+2024-11-07 22:57:00 [RMI TCP Connection(175)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-11-07 22:57:00 [RMI TCP Connection(175)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 22:57:00 [RMI TCP Connection(175)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 22:57:00 [RMI TCP Connection(175)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-07 22:57:00 [RMI TCP Connection(175)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-07 23:26:40 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-07 23:26:40 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Starting FivePointersWebsiteApplication using Java 17.0.9 with PID 41364 (C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main started by priso in C:\Users\priso\Desktop\mixed folder\fivepointers)
+2024-11-07 23:26:40 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - The following 1 profile is active: "dev"
+2024-11-07 23:26:40 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-07 23:26:40 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-07 23:26:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 23:26:43 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 103 ms. Found 12 JPA repository interfaces.
+2024-11-07 23:26:44 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 23:26:44 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:26:44 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 23:26:44 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-07 23:26:44 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-07 23:26:44 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3513 ms
+2024-11-07 23:26:44 [restartedMain] INFO  com.fivepointers.service.JwtService - init JWT expiry renew time set as 24 hours or 86400000 milliseconds
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6ea0464
+ ...
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6ea0464
+ ...
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/priso/Desktop/mixed%20folder/fivepointers/bin/main/db/migration
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\db\migration (db/migration)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__initial.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__insert_update_table.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__update_news_table_add_published_date.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__update_news_table_add_new_status_.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V5__update_news_table_add_new_region.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V6__update_news_table_modify_column_category.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V7__update_news_table_modify_column_category.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V3__update_news_table_add_published_date.sql
+2024-11-07 23:26:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-07 23:26:45 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c821df6
+2024-11-07 23:26:45 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V1__initial.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V4__update_news_table_add_new_status_.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V5__update_news_table_add_new_region.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V7__update_news_table_modify_column_category.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V6__update_news_table_modify_column_category.sql
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V2__insert_update_table.sql
+2024-11-07 23:26:45 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3307/fp (MySQL 8.4)
+2024-11-07 23:26:45 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2024-11-07 23:26:45 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: false
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.database.mysql.MySQLConnection - Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2024-11-07 23:26:45 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: `fp`
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 23:26:45 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 23:26:45 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `fp`: 8
+2024-11-07 23:26:45 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema `fp` is up to date. No migration necessary.
+2024-11-07 23:26:45 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Memory usage: 51 of 80M
+2024-11-07 23:26:45 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 23:26:46 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-11-07 23:26:46 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 23:26:46 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 23:26:46 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2024-11-07 23:26:46 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-07 23:26:48 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 23:26:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 23:26:49 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-07 23:26:50 [restartedMain] INFO  c.f.service.NewsLockService - init Lock retention time set as 20 mins or 1200000 milliseconds
+2024-11-07 23:26:50 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-07 23:26:50 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-07 23:26:51 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2024-11-07 23:26:52 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 23:26:52 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:26:52 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-11-07 23:26:52 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Started FivePointersWebsiteApplication in 12.73 seconds (process running for 14.052)
+2024-11-07 23:26:53 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-07 23:26:53 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-07 23:26:53 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2024-11-07 23:28:20 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-11-07 23:28:20 [RMI TCP Connection(6)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:28:21 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 23:28:21 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-07 23:28:21 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-11-07 23:28:26 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-11-07 23:28:26 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Starting FivePointersWebsiteApplication using Java 17.0.9 with PID 53992 (C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main started by priso in C:\Users\priso\Desktop\mixed folder\fivepointers)
+2024-11-07 23:28:26 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - The following 1 profile is active: "dev"
+2024-11-07 23:28:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-11-07 23:28:26 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-11-07 23:28:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-07 23:28:29 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 198 ms. Found 12 JPA repository interfaces.
+2024-11-07 23:28:31 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-11-07 23:28:31 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:28:31 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-11-07 23:28:31 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-11-07 23:28:31 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-11-07 23:28:31 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5404 ms
+2024-11-07 23:28:32 [restartedMain] INFO  com.fivepointers.service.JwtService - init JWT expiry renew time set as 24 hours or 86400000 milliseconds
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6bae3df1
+ ...
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@6bae3df1
+ ...
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/priso/Desktop/mixed%20folder/fivepointers/bin/main/db/migration
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\priso\Desktop\mixed folder\fivepointers\bin\main\db\migration (db/migration)
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__initial.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__insert_update_table.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V3__update_news_table_add_published_date.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V4__update_news_table_add_new_status_.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V5__update_news_table_add_new_region.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V6__update_news_table_modify_column_category.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V7__update_news_table_modify_column_category.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+2024-11-07 23:28:32 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V3__update_news_table_add_published_date.sql
+2024-11-07 23:28:32 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-11-07 23:28:33 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d0ad9a8
+2024-11-07 23:28:33 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V1__initial.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V4__update_news_table_add_new_status_.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V5__update_news_table_add_new_region.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V8__update_news_table_modify_column_remarks_to_source_url.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V7__update_news_table_modify_column_category.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V6__update_news_table_modify_column_category.sql
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V2__insert_update_table.sql
+2024-11-07 23:28:33 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mysql://localhost:3307/fp (MySQL 8.4)
+2024-11-07 23:28:33 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2024-11-07 23:28:33 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: false
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.database.mysql.MySQLConnection - Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2024-11-07 23:28:33 [restartedMain] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.1.
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: `fp`
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V3__update_news_table_add_published_date.sql (filename: V3__update_news_table_add_published_date.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__initial.sql (filename: V1__initial.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V4__update_news_table_add_new_status_.sql (filename: V4__update_news_table_add_new_status_.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V5__update_news_table_add_new_region.sql (filename: V5__update_news_table_add_new_region.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V8__update_news_table_modify_column_remarks_to_source_url.sql (filename: V8__update_news_table_modify_column_remarks_to_source_url.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V7__update_news_table_modify_column_category.sql (filename: V7__update_news_table_modify_column_category.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V6__update_news_table_modify_column_category.sql (filename: V6__update_news_table_modify_column_category.sql)
+2024-11-07 23:28:33 [restartedMain] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__insert_update_table.sql (filename: V2__insert_update_table.sql)
+2024-11-07 23:28:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `fp`: 8
+2024-11-07 23:28:33 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema `fp` is up to date. No migration necessary.
+2024-11-07 23:28:33 [restartedMain] DEBUG org.flywaydb.core.FlywayExecutor - Memory usage: 46 of 80M
+2024-11-07 23:28:33 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-07 23:28:34 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-11-07 23:28:34 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-11-07 23:28:34 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-07 23:28:34 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [hibernate.temp.use_jdbc_metadata_defaults], use [hibernate.boot.allow_jdbc_metadata_access] instead
+2024-11-07 23:28:34 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-07 23:28:37 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-07 23:28:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 23:28:38 [restartedMain] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-07 23:28:40 [restartedMain] INFO  c.f.service.NewsLockService - init Lock retention time set as 20 mins or 1200000 milliseconds
+2024-11-07 23:28:40 [restartedMain] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-07 23:28:40 [restartedMain] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-07 23:28:41 [restartedMain] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 15 endpoints beneath base path '/actuator'
+2024-11-07 23:28:43 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-11-07 23:28:43 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:28:43 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-11-07 23:28:43 [restartedMain] INFO  c.f.FivePointersWebsiteApplication - Started FivePointersWebsiteApplication in 18.264 seconds (process running for 19.425)
+2024-11-07 23:28:43 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-07 23:28:43 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-11-07 23:28:43 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2024-11-07 23:48:37 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-11-07 23:48:37 [RMI TCP Connection(23)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-11-07 23:48:37 [RMI TCP Connection(23)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-07 23:48:37 [RMI TCP Connection(23)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-11-07 23:48:37 [RMI TCP Connection(23)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
