@@ -12,9 +12,9 @@ import com.fivepointers.selenium.entity.NewsStore;
 @Repository
 public interface NewsStoreRepository extends JpaRepository<NewsStore, Long> {
 	
-	@Query("SELECT MAX(scrapDate) FROM NewsStore")
+	@Query("SELECT MAX(ns.scrapDate) FROM NewsStore ns")
 	public LocalDateTime findLatestNewsArticleDateTime();
 	
-	@Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM NewsStore ns WHERE ns.url = :url")
+	@Query("SELECT CASE WHEN COUNT(*) > 0 THEN true ELSE false END FROM NewsStore ns WHERE ns.url = :url")
     boolean existsByUrl(@Param("url") String url);
 }

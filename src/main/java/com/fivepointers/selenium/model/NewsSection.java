@@ -1,4 +1,4 @@
-package com.fivepointers.selenium;
+package com.fivepointers.selenium.model;
 
 public class NewsSection {
 	private String topic;

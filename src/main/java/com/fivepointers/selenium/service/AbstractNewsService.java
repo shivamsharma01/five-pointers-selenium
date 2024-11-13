@@ -50,7 +50,7 @@ public abstract class AbstractNewsService {
 				store.setScrapDate(article.getSaveDate());
 				newsStoreRepository.save(store);
 			} catch (Exception e) {
-				log.error("Not able to save entity with url: " + article.getUrl());
+				log.error("Not able to save entity with url: " + article.getUrl() + " : " + e.getMessage());
 			}
 		});
 	}

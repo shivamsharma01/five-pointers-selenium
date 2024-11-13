@@ -1,12 +1,12 @@
-news-data/
-news-data
-/news-data
 HELP.md
 .gradle
+/logs
 build/
+images/**
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+**/resources/static/
 
 ### STS ###
 .apt_generated

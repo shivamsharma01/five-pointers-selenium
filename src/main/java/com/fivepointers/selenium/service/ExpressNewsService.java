@@ -12,10 +12,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.fivepointers.selenium.DriveSeleniumTask;
-import com.fivepointers.selenium.NewsSection;
 import com.fivepointers.selenium.model.Article;
+import com.fivepointers.selenium.model.NewsSection;
 import com.fivepointers.selenium.repository.NewsStoreRepository;
+import com.fivepointers.selenium.task.DriveSeleniumTask;
 
 @Service
 public class ExpressNewsService extends AbstractNewsService {
@@ -35,7 +35,7 @@ public class ExpressNewsService extends AbstractNewsService {
 		driver.manage().window().maximize();
 		sections.forEach(section -> {
 			driver.get(section.getUrl());
-			List<WebElement> elements = driver.findElements(By.className("articles"));
+			List<WebElement> elements = driver.findElements(By.className("articles")).subList(0, 2);
 			List<Article> articles = elements.stream().map(element -> getDetails(element))
 					.filter(article -> article.getPublishDate().isAfter(DriveSeleniumTask.lastScraped)
 							|| isUnreadArticle(article.getUrl()))

@@ -23,8 +23,6 @@ public class NewsStore {
 	private String url;
 	@Column(name = "news_title", nullable = false)
 	private String newsTitle;
-	@Column(name = "author_name")
-	private String authorName;
 	@Column(name = "news_synopsis")
 	private String newsSynopsis;
 	@Column(name = "news_data_original", nullable = false)
@@ -34,9 +32,9 @@ public class NewsStore {
 	@Column(name = "publish_date")
 	private LocalDateTime publishDate;
 	@Column(name = "scrap_date", nullable = false)
-	private LocalDateTime ScrapDate;
-	@Column(name = "modified_date", nullable = false)
+	private LocalDateTime scrapDate;
+	@Column(name = "modified_date")
 	private LocalDateTime modifiedDate;
-	@Column(name = "updated_by", nullable = false)
+	@Column(name = "updated_by")
 	private long updatedBy;
 }
