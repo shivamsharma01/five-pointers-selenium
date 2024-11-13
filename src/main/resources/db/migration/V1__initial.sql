@@ -3,10 +3,10 @@ CREATE TABLE news_store (
     website_name VARCHAR(64) NOT NULL,
     url VARCHAR(512) NOT NULL,
     news_title TEXT NOT NULL,
-    author_name VARCHAR(64),
     news_synopsys TEXT,
     news_data_original TEXT NOT NULL,
     news_data_modified TEXT,
+    publish_date TIMESTAMP,
     scrap_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     modified_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     updated_by BIGINT NOT NULL DEFAULT 0

@@ -34,9 +34,10 @@ dependencies {
 	implementation 'commons-io:commons-io:2.16.1'
 	implementation 'org.apache.commons:commons-lang3:3.15.0'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+	annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+	compileOnly "org.projectlombok:lombok:$lombokVersion"
 	testCompileOnly "org.projectlombok:lombok:$lombokVersion"
 	testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
-	
 }
 
 tasks.named('test') {

@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.fivepointers.selenium.DriveSelenium.Article;
+import com.fivepointers.selenium.DriveSeleniumTask.Article;
 
 public class Jagran extends News {
 	// SUN, 29 SEP 2024 01:34 PM (IST)

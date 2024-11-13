@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.fivepointers.selenium.DriveSelenium.Article;
+import com.fivepointers.selenium.DriveSeleniumTask.Article;
 
 public class Navbharat extends News {
 	// 30 Sept 2024, 6:19 pm
