@@ -19,10 +19,6 @@ public abstract class AbstractNewsService {
 
 	private static final Logger log = LoggerFactory.getLogger(AbstractNewsService.class);
 
-	// September 16, 2024 07:38 IST
-	private final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
-			.appendPattern("MMMM dd, yyyy H:m z").toFormatter(Locale.ENGLISH);
-
 	private final NewsStoreRepository newsStoreRepository;
 	private final String NEWS_CHANNEL_NAME;
 

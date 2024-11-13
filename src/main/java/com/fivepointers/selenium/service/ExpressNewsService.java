@@ -1,7 +1,10 @@
 package com.fivepointers.selenium.service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.By;
@@ -17,10 +20,19 @@ import com.fivepointers.selenium.model.NewsSection;
 import com.fivepointers.selenium.repository.NewsStoreRepository;
 import com.fivepointers.selenium.task.DriveSeleniumTask;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
 @Service
 public class ExpressNewsService extends AbstractNewsService {
 
 	private static final Logger log = LoggerFactory.getLogger(ExpressNewsService.class);
+
+	// September 16, 2024 07:38 IST
+	private final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
+			.appendPattern("MMMM dd, yyyy H:m z").toFormatter(Locale.ENGLISH);
 
 	private List<NewsSection> sections = List.of(
 			new NewsSection("politics", "https://indianexpress.com/section/political-pulse/"),
@@ -35,7 +47,7 @@ public class ExpressNewsService extends AbstractNewsService {
 		driver.manage().window().maximize();
 		sections.forEach(section -> {
 			driver.get(section.getUrl());
-			List<WebElement> elements = driver.findElements(By.className("articles")).subList(0, 2);
+			List<WebElement> elements = driver.findElements(By.className("articles"));
 			List<Article> articles = elements.stream().map(element -> getDetails(element))
 					.filter(article -> article.getPublishDate().isAfter(DriveSeleniumTask.lastScraped)
 							|| isUnreadArticle(article.getUrl()))
