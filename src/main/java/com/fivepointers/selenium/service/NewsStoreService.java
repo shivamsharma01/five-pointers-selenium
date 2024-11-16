@@ -41,4 +41,8 @@ public class NewsStoreService {
 	public boolean isNewOrWithinRetryLimit(String url, int retryLimit) {
 		return newsStoreErrorService.isWithinRetryLimit(url, retryLimit);
 	}
+
+	public void deleteByDuration(LocalDateTime tillTime) {
+		newsStoreRepository.deleteByDuration(tillTime);
+	}
 }

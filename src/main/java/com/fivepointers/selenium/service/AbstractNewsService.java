@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.fivepointers.selenium.entity.NewsStore;
 import com.fivepointers.selenium.model.Article;
 import com.fivepointers.selenium.model.NewsSection;
-import com.fivepointers.selenium.task.DriveSeleniumTask;
+import com.fivepointers.selenium.task.NewsScrapTask;
 
 import lombok.Data;
 
@@ -32,7 +32,7 @@ public abstract class AbstractNewsService {
 	public abstract void scrapNews(WebDriver driver, WebDriverWait wait, long schedulerId);
 
 	public boolean isUnreadArticle(Article article) {
-		return (article.getPublishDate().isAfter(DriveSeleniumTask.lastScraped)
+		return (article.getPublishDate().isAfter(NewsScrapTask.lastScraped)
 				|| newsStoreService.isUnreadUrl(article.getUrl()))
 				&& newsStoreService.isNewOrWithinRetryLimit(article.getUrl(), RETRTY_LIMIT);
 	}

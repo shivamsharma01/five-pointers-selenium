@@ -24,10 +24,10 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Component
-public class DriveSeleniumTask {
+public class NewsScrapTask {
 
 	public static LocalDateTime lastScraped;
-	private static final Logger log = LoggerFactory.getLogger(DriveSeleniumTask.class);
+	private static final Logger log = LoggerFactory.getLogger(NewsScrapTask.class);
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
 	private static boolean isSuccess;
 
@@ -38,7 +38,7 @@ public class DriveSeleniumTask {
 	private final JagranNewsService jagranNewsService;
 	private final NavbharatNewsService navbharatNewsService;
 
-	@Scheduled(fixedRateString = "${news.scrap.scheduler.rate}", initialDelay = 1000)
+	@Scheduled(fixedRateString = "${news.scrap.scheduler.fetch.rate}", initialDelay = 60000)
 	public void reportCurrentTime() {
 		// newsStoreRepository.deleteAll();
 		Scheduler scheduler = schedulerService.createScheduler();
