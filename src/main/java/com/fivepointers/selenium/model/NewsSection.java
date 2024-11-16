@@ -1,19 +1,12 @@
 package com.fivepointers.selenium.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
 public class NewsSection {
-	private String topic;
+	private String category;
+	private String tag;
 	private String url;
-
-	public NewsSection(String topic, String url) {
-		this.topic = topic;
-		this.url = url;
-	}
-
-	public String getTopic() {
-		return topic;
-	}
-
-	public String getUrl() {
-		return url;
-	}
 }

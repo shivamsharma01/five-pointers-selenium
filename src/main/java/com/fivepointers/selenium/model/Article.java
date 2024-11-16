@@ -12,4 +12,5 @@ public class Article {
 	String content;
 	LocalDateTime publishDate;
 	LocalDateTime saveDate;
+	boolean isError;
 }

@@ -10,15 +10,14 @@ import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.fivepointers.selenium.model.Article;
 import com.fivepointers.selenium.model.NewsSection;
-import com.fivepointers.selenium.repository.NewsStoreRepository;
-import com.fivepointers.selenium.task.DriveSeleniumTask;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -29,78 +28,84 @@ import lombok.EqualsAndHashCode;
 public class ExpressNewsService extends AbstractNewsService {
 
 	private static final Logger log = LoggerFactory.getLogger(ExpressNewsService.class);
-
 	// September 16, 2024 07:38 IST
-	private final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
+	private static final DateTimeFormatter formatter = new DateTimeFormatterBuilder().parseCaseInsensitive()
 			.appendPattern("MMMM dd, yyyy H:m z").toFormatter(Locale.ENGLISH);
 
-	private List<NewsSection> sections = List.of(
-			new NewsSection("politics", "https://indianexpress.com/section/political-pulse/"),
-			new NewsSection("sports", "https://indianexpress.com/section/sports/"));
+	private final NewsStoreService newsStoreService;
 
-	public ExpressNewsService(String newsChannelName, NewsStoreRepository newsStoreRepository) {
-		super(newsChannelName, newsStoreRepository);
+	private final List<NewsSection> sections = List.of(
+			new NewsSection("Politics", "politics", "https://indianexpress.com/section/political-pulse/"),
+			new NewsSection("Sports", "sports", "https://indianexpress.com/section/sports/"));
+
+	public ExpressNewsService(NewsStoreService newsStoreService) {
+		super("Express News", newsStoreService);
+		this.newsStoreService = newsStoreService;
 	}
 
-	public void scrapNews() {
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+	public void scrapNews(WebDriver driver, WebDriverWait wait, long schedulerId) {
 		sections.forEach(section -> {
 			driver.get(section.getUrl());
-			List<WebElement> elements = driver.findElements(By.className("articles"));
-			List<Article> articles = elements.stream().map(element -> getDetails(element))
-					.filter(article -> article.getPublishDate().isAfter(DriveSeleniumTask.lastScraped)
-							|| isUnreadArticle(article.getUrl()))
-					.peek(article -> getFullContent(article)).filter(article -> article.getContent() != null)
-					.collect(Collectors.toList());
-			writeArticles(section.getTopic(), articles);
+			List<WebElement> elements = wait
+					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("articles")));
+
+			List<Article> articles = elements.stream().limit(5).map(element -> getDetails(element))
+					.filter(article -> article != null && isUnreadArticle(article)).collect(Collectors.toList());
+
+			articles = articles.stream().peek(article -> getFullContent(article, driver)).toList();
+
+			articles = filterArticles(articles, schedulerId, section).stream().toList();
+
+			writeArticles(section.getCategory(), section.getTag(), articles);
 		});
-		driver.quit();
 	}
 
 	private Article getDetails(WebElement element) {
 		Article article = new Article();
+		try {
+			article.setUrl(element.findElement(By.tagName("a")).getAttribute("href"));
+		} catch (Exception ex) {
+			log.error("getDetails: failed to load url " + element);
+			return null;
+		}
 		article.setSaveDate(LocalDateTime.now());
 		try {
 			article.setTitle(element.findElement(By.cssSelector("h2 a")).getText());
 		} catch (Exception ex) {
+			article.setSynopsys("Failed to load Title");
 			log.error("getDetails: failed to load title " + element);
 		}
 		try {
-			article.setPublishDate(
-					LocalDateTime.parse(element.findElement(By.className("date")).getText(), this.getFormatter()));
+			article.setPublishDate(LocalDateTime.parse(element.findElement(By.className("date")).getText(), formatter));
 		} catch (Exception ex) {
+			article.setPublishDate(LocalDateTime.now());
 			log.error("getDetails: failed to load date " + element);
 		}
 		try {
 			article.setSynopsys(element.findElement(By.tagName("p")).getText());
 		} catch (Exception ex) {
+			article.setSynopsys("Failed to load Synopsys");
 			log.error("getDetails: failed to load synopsis " + element);
-		}
-		try {
-			article.setUrl(element.findElement(By.tagName("a")).getAttribute("href"));
-		} catch (Exception ex) {
-			log.error("getDetails: failed to load url " + element);
 		}
 		return article;
 	}
 
-	private static void getFullContent(Article article) {
-		WebDriver driver = new ChromeDriver();
+	private static void getFullContent(Article article, WebDriver driver) {
 		driver.get(article.getUrl());
 		try {
 			String fullContent = driver.findElement(By.id("pcl-full-content")).getText().replaceAll("ADVERTISEMENT", "")
 					.replace("Click here to join The Indian Express on WhatsApp and get latest news and updates", "");
 			article.setContent(fullContent.trim());
 		} catch (org.openqa.selenium.NoSuchElementException ex) {
+			article.setContent(ex.getMessage());
+			article.setError(true);
 			log.error("getFullContent: failed to load content " + article.getUrl());
-			article.setContent(null);
 		}
-		driver.close();
 		try {
 			Thread.sleep(2000l);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		article.setError(false);
 	}
 }

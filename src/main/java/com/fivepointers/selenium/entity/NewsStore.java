@@ -23,6 +23,10 @@ public class NewsStore {
 	private String url;
 	@Column(name = "news_title", nullable = false)
 	private String newsTitle;
+	@Column(name = "news_category", nullable = false)
+	private String newsCategory;
+	@Column(name = "news_website_tag")
+	private String newsWebTag;
 	@Column(name = "news_synopsis")
 	private String newsSynopsis;
 	@Column(name = "news_data_original", nullable = false)
