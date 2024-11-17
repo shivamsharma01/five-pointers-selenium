@@ -49,7 +49,7 @@ public class ExpressNewsService extends AbstractNewsService {
 			List<WebElement> elements = wait
 					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("articles")));
 
-			List<Article> articles = elements.stream().limit(5).map(element -> getDetails(element))
+			List<Article> articles = elements.stream().map(element -> getDetails(element))
 					.filter(article -> article != null && isUnreadArticle(article)).collect(Collectors.toList());
 
 			articles = articles.stream().peek(article -> getFullContent(article, driver)).toList();

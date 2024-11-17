@@ -65,7 +65,7 @@ public class JagranNewsService extends AbstractNewsService {
 			driver.get(section.getUrl());
 			List<WebElement> elements = wait
 					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector(".stickySidebar ul li")));
-			List<String> articleUrls = elements.stream().limit(7).map(element -> getUrl(element))
+			List<String> articleUrls = elements.stream().map(element -> getUrl(element))
 					.collect(Collectors.toList());
 
 			List<Article> articles = articleUrls.stream().filter(url -> url != null && !url.isBlank())
