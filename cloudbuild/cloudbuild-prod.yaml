@@ -1,0 +1,61 @@
+steps:
+  # Step to build the application
+  - name: 'gradle:8.9-jdk17'
+    entrypoint: 'gradle'
+    args: ['clean', 'build', '-x', 'test', '-Pversion=1.0.0']
+
+  # Step to prepare the SSH key for deployment
+  - name: 'alpine'
+    volumes:
+      - name: 'ssh-key-volume'
+        path: /workspace/ssh
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        mkdir -p /workspace/ssh && \
+        echo "${_VPS_DEPLOY_KEY}" > /workspace/ssh/deploy_key && \
+        chmod 600 /workspace/ssh/deploy_key
+
+  # Step to install SSH and clear existing files on the VPS
+  - name: 'alpine'
+    volumes:
+      - name: 'ssh-key-volume'
+        path: /workspace/ssh
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        apk add --no-cache openssh && \
+        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@145.223.21.74 \
+        'rm -rf /opt/fivepointers/deploy/backend/selenium/*'
+
+  # Step to copy the built JAR file to the VPS
+  - name: 'alpine'
+    volumes:
+      - name: 'ssh-key-volume'
+        path: /workspace/ssh
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        apk add --no-cache openssh && \
+        scp -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no \
+        /workspace/build/libs/selenium-1.0.0.jar \
+        fivepointers@145.223.21.74:/opt/fivepointers/deploy/backend/selenium
+
+  # Step to restart the application using systemctl on the VPS
+  - name: 'alpine'
+    volumes:
+      - name: 'ssh-key-volume'
+        path: /workspace/ssh
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        apk add --no-cache openssh && \
+        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@145.223.21.74 \
+        'sudo systemctl restart selenium'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
