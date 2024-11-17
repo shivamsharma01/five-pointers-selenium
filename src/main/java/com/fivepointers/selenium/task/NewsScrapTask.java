@@ -3,6 +3,7 @@ package com.fivepointers.selenium.task;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -32,6 +34,9 @@ public class NewsScrapTask {
 	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
 	private static boolean isSuccess;
 
+	@Value("#{'${selenium.chrome.arguments}'.split(',')}")
+	private List<String> arguments;
+
 	private final NewsStoreService newsStoreService;
 
 	private final SchedulerService schedulerService;
@@ -39,17 +44,22 @@ public class NewsScrapTask {
 	private final JagranNewsService jagranNewsService;
 	private final NavbharatNewsService navbharatNewsService;
 
-	@Scheduled(fixedRateString = "${news.scrap.scheduler.fetch.rate}", initialDelay = 60000)
+	@Scheduled(fixedRateString = "${news.scrap.scheduler.fetch.rate}", initialDelay = 1000)
 	public void reportCurrentTime() {
-		// newsStoreRepository.deleteAll();
 		Scheduler scheduler = schedulerService.createScheduler();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		options.addArguments("--remote-debugging-port=9222");
-		options.addArguments("--disable-gpu");
-		WebDriver driver = new ChromeDriver(options);
+		WebDriver driver;
+		if (arguments != null && !arguments.isEmpty()) {
+			ChromeOptions options = new ChromeOptions();
+			for (String argument : arguments) {
+				if (argument != null && !argument.trim().isEmpty()) {
+					options.addArguments(argument);
+				}
+			}
+			driver = new ChromeDriver(options);
+		} else {
+			driver = new ChromeDriver();
+		}
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));

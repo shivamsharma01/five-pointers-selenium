@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +48,8 @@ public class NavbharatNewsService extends AbstractNewsService {
 	public void scrapNews(WebDriver driver, WebDriverWait wait, long schedulerId) {
 		sections.forEach(section -> {
 			driver.get(section.getUrl());
-			List<WebElement> elements = driver.findElements(By.cssSelector("ul.medium_listing li"));
+			List<WebElement> elements = wait
+					.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("ul.medium_listing li")));
 			List<String> articlesUrl = elements.stream().map(element -> getUrl(element))
 					.filter(url -> url != null && !url.isBlank()).toList();
 
@@ -74,6 +76,7 @@ public class NavbharatNewsService extends AbstractNewsService {
 	private Article getFullContent(String url, WebDriver driver) {
 		Article article = new Article();
 		article.setUrl(url);
+		article.setSaveDate(LocalDateTime.now());
 		driver.get(url);
 		try {
 			WebElement element = driver.findElement(By.className("story-article"));
