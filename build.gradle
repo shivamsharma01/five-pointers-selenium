@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.fivepointers'
-version = '0.0.1-SNAPSHOT'
+version = project.hasProperty('version') ? project.version : '0.0.1'
 
 java {
 	toolchain {
