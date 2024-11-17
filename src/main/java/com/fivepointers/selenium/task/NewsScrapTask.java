@@ -44,7 +44,7 @@ public class NewsScrapTask {
 	private final JagranNewsService jagranNewsService;
 	private final NavbharatNewsService navbharatNewsService;
 
-	@Scheduled(fixedRateString = "${news.scrap.scheduler.fetch.rate}", initialDelay = 1000)
+	@Scheduled(fixedRateString = "${news.scrap.scheduler.fetch.rate}", initialDelay = 60000)
 	public void reportCurrentTime() {
 		Scheduler scheduler = schedulerService.createScheduler();
 		WebDriver driver;
