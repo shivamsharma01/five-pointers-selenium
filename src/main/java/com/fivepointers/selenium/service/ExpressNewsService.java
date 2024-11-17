@@ -72,7 +72,7 @@ public class ExpressNewsService extends AbstractNewsService {
 		try {
 			article.setTitle(element.findElement(By.cssSelector("h2 a")).getText());
 		} catch (Exception ex) {
-			article.setSynopsys("Failed to load Title");
+			article.setTitle("Failed to load Title");
 			log.error("getDetails: failed to load title " + element);
 		}
 		try {
@@ -82,9 +82,9 @@ public class ExpressNewsService extends AbstractNewsService {
 			log.error("getDetails: failed to load date " + element);
 		}
 		try {
-			article.setSynopsys(element.findElement(By.tagName("p")).getText());
+			article.setSynopsis(element.findElement(By.tagName("p")).getText());
 		} catch (Exception ex) {
-			article.setSynopsys("Failed to load Synopsys");
+			article.setSynopsis("Failed to load Synopsys");
 			log.error("getDetails: failed to load synopsis " + element);
 		}
 		return article;

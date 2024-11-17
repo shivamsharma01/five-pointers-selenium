@@ -63,7 +63,7 @@ public abstract class AbstractNewsService {
 				store.setNewsTitle(article.getTitle());
 				store.setNewsCategory(category);
 				store.setNewsWebTag(tag);
-				store.setNewsSynopsis(article.getSynopsys());
+				store.setNewsSynopsis(article.getSynopsis());
 				store.setOriginalData(article.getContent());
 				store.setPublishDate(article.getPublishDate());
 				store.setScrapDate(article.getSaveDate());

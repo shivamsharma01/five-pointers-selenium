@@ -8,7 +8,7 @@ import lombok.Data;
 public class Article {
 	String url;
 	String title;
-	String synopsys;
+	String synopsis;
 	String content;
 	LocalDateTime publishDate;
 	LocalDateTime saveDate;

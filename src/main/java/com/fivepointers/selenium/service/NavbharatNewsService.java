@@ -115,7 +115,7 @@ public class NavbharatNewsService extends AbstractNewsService {
 		}
 		try {
 			textString = element.findElement(By.cssSelector("h2")).getText();
-			article.setSynopsys(textString);
+			article.setSynopsis(textString);
 		} catch (org.openqa.selenium.NoSuchElementException ex) {
 			log.error("Not able to fetch news article synopsis: " + article.getUrl());
 		}

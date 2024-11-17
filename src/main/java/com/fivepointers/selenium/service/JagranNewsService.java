@@ -143,9 +143,9 @@ public class JagranNewsService extends AbstractNewsService {
 		}
 		try {
 			textString = element.findElement(By.cssSelector("p[class*='_shortdescription_']")).getText();
-			article.setSynopsys(textString);
+			article.setSynopsis(textString);
 		} catch (org.openqa.selenium.NoSuchElementException ex) {
-			article.setSynopsys("Failed to load Title");
+			article.setSynopsis("Failed to load Title");
 			log.error("Not able to fetch news article synopsis: " + article.getUrl());
 		}
 		article.setError(false);
