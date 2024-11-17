@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,11 +43,19 @@ public class NewsScrapTask {
 	public void reportCurrentTime() {
 		// newsStoreRepository.deleteAll();
 		Scheduler scheduler = schedulerService.createScheduler();
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--remote-debugging-port=9222");
+		options.addArguments("--disable-gpu");
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 		driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 		isSuccess = true;
 		findLastScraped();
 		scrapNews(scheduler, driver, wait, expressNewsService);
