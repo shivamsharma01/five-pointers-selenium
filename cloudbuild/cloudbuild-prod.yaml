@@ -27,7 +27,7 @@ steps:
       - '-c'
       - |
         apk add --no-cache openssh && \
-        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@145.223.21.74 \
+        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@193.203.160.173 \
         'rm -rf /opt/fivepointers/deploy/backend/selenium/*'
 
   # Step to copy the built JAR file to the VPS
@@ -42,7 +42,7 @@ steps:
         apk add --no-cache openssh && \
         scp -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no \
         /workspace/build/libs/selenium-1.0.0.jar \
-        fivepointers@145.223.21.74:/opt/fivepointers/deploy/backend/selenium
+        fivepointers@193.203.160.173:/opt/fivepointers/deploy/backend/selenium
 
   # Step to restart the application using systemctl on the VPS
   - name: 'alpine'
@@ -54,7 +54,7 @@ steps:
       - '-c'
       - |
         apk add --no-cache openssh && \
-        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@145.223.21.74 \
+        ssh -i /workspace/ssh/deploy_key -o StrictHostKeyChecking=no fivepointers@193.203.160.173 \
         'sudo systemctl restart selenium'
 
 options:
